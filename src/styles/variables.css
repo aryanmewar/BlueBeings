@@ -1,0 +1,41 @@
+:root {
+  /* Color Palette - Blue Beings Void Theme */
+  --color-background: #030712;
+  --color-background-elevated: #080e1e;
+  --color-background-glass: rgba(6, 12, 26, 0.75);
+  
+  --color-foreground: #f8fafc;
+  --color-foreground-muted: #94a3b8;
+  --color-foreground-dim: #64748b;
+  
+  --color-primary: #00f0ff;
+  --color-primary-hover: #38bdf8;
+  --color-primary-glow: rgba(0, 240, 255, 0.25);
+  
+  --color-secondary: #6366f1;
+  --color-accent: #3b82f6;
+  --color-accent-deep: #1e1b4b;
+  
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-border-accent: rgba(0, 240, 255, 0.3);
+
+  /* Typography */
+  --font-heading: 'Syne', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Easing & Transitions */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-cubic: cubic-bezier(0.65, 0, 0.35, 1);
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-medium: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Z-indices */
+  --z-canvas: 0;
+  --z-content: 10;
+  --z-navbar: 40;
+  --z-cursor: 50;
+  --z-modal: 60;
+  --z-loader: 100;
+}

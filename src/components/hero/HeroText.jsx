@@ -16,7 +16,7 @@ export default function HeroText() {
       >
         <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping" />
         <span className="font-mono text-xs text-cyan-300 uppercase tracking-widest">
-          CREATIVE TECHNOLOGY STUDIO
+          CREATIVE TECHNOLOGY & BRAND STUDIO
         </span>
       </motion.div>
 
@@ -41,14 +41,14 @@ export default function HeroText() {
         </motion.p>
       </div>
 
-      {/* Supporting Text */}
+      {/* Rephrased Hero Studio Paragraph */}
       <motion.p
         variants={fadeIn('up', 0.5)}
         initial="hidden"
         animate="show"
-        className="max-w-xl text-slate-300 text-sm sm:text-base lg:text-lg font-light leading-relaxed mb-8"
+        className="max-w-2xl text-slate-300 text-sm sm:text-base lg:text-lg font-light leading-relaxed mb-8"
       >
-        We architect immersive 3D digital experiences, interactive WebGL landscapes, cinematic identities, and technology-driven narratives for forward-thinking visionaries.
+        From bespoke brand kits and logo systems to custom web design, AI-driven graphics, and strategic brand consultancy—we transform your ideas into iconic visual identity. Whether crafting social media visuals, business stationery, or tailored portfolio flagships, we bring your vision to life with precision and creativity.
       </motion.p>
 
       {/* Action Buttons */}

@@ -56,25 +56,26 @@ export default function ThreeScene({ scrollProgress = 0, mousePos = { normalized
         onError={() => setWebglSupported(false)}
       >
         <Canvas
-          camera={{ position: [0, 0, 7.5], fov: isMobile ? 48 : 45, near: 0.1, far: 50 }}
-          dpr={[1, isMobile ? 1.5 : 2]}
+          camera={{ position: [0, 0, 7.5], fov: isMobile ? 48 : 45, near: 0.1, far: 45 }}
+          dpr={isMobile ? 1 : [1, 1.5]}
           gl={{
-            antialias: true,
-            powerPreference: 'high-performance',
+            antialias: !isMobile,
+            powerPreference: isMobile ? 'default' : 'high-performance',
             alpha: true,
             depth: true,
+            stencil: false,
           }}
           style={{ background: 'transparent' }}
         >
           <ThreeLoader />
 
-          {/* Full Lighting Setup */}
-          <ambientLight intensity={0.5} />
-          <directionalLight position={[5, 10, 7]} intensity={1.5} color="#ffffff" />
-          <pointLight position={[-6, -4, -2]} intensity={2} color="#00f0ff" distance={15} />
-          <pointLight position={[6, 4, -4]} intensity={2.5} color="#3b82f6" distance={15} />
+          {/* Lighting */}
+          <ambientLight intensity={0.6} />
+          <directionalLight position={[5, 8, 5]} intensity={1.4} color="#ffffff" />
+          <pointLight position={[-5, -4, -2]} intensity={1.8} color="#00f0ff" distance={12} />
+          <pointLight position={[5, 4, -4]} intensity={2.0} color="#3b82f6" distance={12} />
 
-          {/* Main 3D Mesh (Exact Desktop Distorted Liquid Glass Object) */}
+          {/* Main 3D Object */}
           <InteractiveBlob
             mousePos={mousePos}
             scrollProgress={scrollProgress}

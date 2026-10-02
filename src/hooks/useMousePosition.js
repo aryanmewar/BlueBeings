@@ -9,17 +9,29 @@ export function useMousePosition() {
   });
 
   useEffect(() => {
+    // Disable on touch-only mobile devices to save CPU/GPU cycles
+    const isTouch = window.matchMedia('(hover: none)').matches;
+    if (isTouch) return;
+
+    let ticking = false;
+
     const handleMouseMove = (e) => {
-      const { innerWidth, innerHeight } = window;
-      setMousePosition({
-        x: e.clientX,
-        y: e.clientY,
-        normalizedX: (e.clientX / innerWidth) * 2 - 1,
-        normalizedY: -(e.clientY / innerHeight) * 2 + 1,
-      });
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const { innerWidth, innerHeight } = window;
+          setMousePosition({
+            x: e.clientX,
+            y: e.clientY,
+            normalizedX: (e.clientX / innerWidth) * 2 - 1,
+            normalizedY: -(e.clientY / innerHeight) * 2 + 1,
+          });
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);

@@ -56,26 +56,25 @@ export default function ThreeScene({ scrollProgress = 0, mousePos = { normalized
         onError={() => setWebglSupported(false)}
       >
         <Canvas
-          camera={{ position: [0, 0, 7.5], fov: isMobile ? 50 : 45, near: 0.1, far: 50 }}
-          dpr={isMobile ? 1 : [1, 1.5]}
+          camera={{ position: [0, 0, 7.5], fov: isMobile ? 48 : 45, near: 0.1, far: 50 }}
+          dpr={[1, isMobile ? 1.5 : 2]}
           gl={{
-            antialias: !isMobile, // Disable MSAA on mobile for massive GPU performance gain
-            powerPreference: isMobile ? 'low-power' : 'high-performance',
+            antialias: true,
+            powerPreference: 'high-performance',
             alpha: true,
             depth: true,
-            stencil: false,
           }}
           style={{ background: 'transparent' }}
         >
           <ThreeLoader />
 
-          {/* Lighting */}
-          <ambientLight intensity={isMobile ? 0.8 : 0.5} />
-          <directionalLight position={[5, 8, 5]} intensity={isMobile ? 1.2 : 1.5} color="#ffffff" />
-          <pointLight position={[-4, -3, -2]} intensity={1.5} color="#00f0ff" distance={12} />
-          {!isMobile && <pointLight position={[5, 4, -3]} intensity={2} color="#3b82f6" distance={12} />}
+          {/* Full Lighting Setup */}
+          <ambientLight intensity={0.5} />
+          <directionalLight position={[5, 10, 7]} intensity={1.5} color="#ffffff" />
+          <pointLight position={[-6, -4, -2]} intensity={2} color="#00f0ff" distance={15} />
+          <pointLight position={[6, 4, -4]} intensity={2.5} color="#3b82f6" distance={15} />
 
-          {/* Main 3D Mesh */}
+          {/* Main 3D Mesh (Exact Desktop Distorted Liquid Glass Object) */}
           <InteractiveBlob
             mousePos={mousePos}
             scrollProgress={scrollProgress}
@@ -88,13 +87,11 @@ export default function ThreeScene({ scrollProgress = 0, mousePos = { normalized
             isMobile={isMobile}
           />
 
-          {/* Floating Objects (Only rendered on Desktop for 60fps mobile) */}
-          {!isMobile && (
-            <FloatingObjects
-              scrollProgress={scrollProgress}
-              isMobile={isMobile}
-            />
-          )}
+          {/* Floating Objects */}
+          <FloatingObjects
+            scrollProgress={scrollProgress}
+            isMobile={isMobile}
+          />
 
           {/* Camera Controller */}
           <CameraController

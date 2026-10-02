@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { CheckCircle2, AlertCircle, Send } from 'lucide-react';
+import { CheckCircle2, AlertCircle } from 'lucide-react';
 import Button from '@/components/common/Button';
 
 export default function ContactForm() {
@@ -8,8 +8,8 @@ export default function ContactForm() {
     name: '',
     email: '',
     company: '',
-    projectType: '3D / WebGL Experience',
-    budget: '$25k - $50k',
+    projectType: 'Website Design',
+    budget: '₹15,000 - ₹35,000',
     message: '',
   });
 
@@ -18,18 +18,19 @@ export default function ContactForm() {
   const [isSuccess, setIsSuccess] = useState(false);
 
   const projectTypes = [
-    '3D / WebGL Experience',
-    'Brand Identity & Systems',
-    'Full Web Development',
-    'Cinematic Motion / CGI',
-    'Social Campaign Art',
+    'Website Design',
+    'Logo Design & Branding',
+    'Graphic & Visual Design',
+    'Video Editing & Motion',
+    'Social Media Management',
+    'Wedding & Event Video',
   ];
 
   const budgetRanges = [
-    '< $25k',
-    '$25k - $50k',
-    '$50k - $100k',
-    '$100k+',
+    '< ₹15,000',
+    '₹15,000 - ₹35,000',
+    '₹35,000 - ₹75,000',
+    '₹75,000+',
   ];
 
   const validate = () => {
@@ -59,15 +60,15 @@ export default function ContactForm() {
         name: '',
         email: '',
         company: '',
-        projectType: '3D / WebGL Experience',
-        budget: '$25k - $50k',
+        projectType: 'Website Design',
+        budget: '₹15,000 - ₹35,000',
         message: '',
       });
     }, 1200);
   };
 
   return (
-    <div className="relative glass-panel rounded-3xl p-8 sm:p-12 border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.6)]">
+    <div className="relative glass-panel rounded-2xl p-6 sm:p-10 border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.6)]">
       <AnimatePresence mode="wait">
         {isSuccess ? (
           <motion.div
@@ -75,29 +76,29 @@ export default function ContactForm() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
-            className="text-center py-16 space-y-6"
+            className="text-center py-12 space-y-5"
           >
-            <div className="w-16 h-16 rounded-full bg-cyan-400/20 border border-cyan-400 flex items-center justify-center mx-auto text-cyan-400">
-              <CheckCircle2 className="w-8 h-8" />
+            <div className="w-14 h-14 rounded-full bg-cyan-400/20 border border-cyan-400 flex items-center justify-center mx-auto text-cyan-400">
+              <CheckCircle2 className="w-7 h-7" />
             </div>
-            <h3 className="font-heading text-3xl font-extrabold uppercase text-slate-100">
-              TRANSMISSION RECEIVED
+            <h3 className="font-heading text-2xl font-extrabold uppercase text-slate-100">
+              MESSAGE RECEIVED
             </h3>
-            <p className="text-slate-400 max-w-md mx-auto text-base font-light">
-              Thank you for reaching out. Our executive creative team will review your project brief and respond within 24 hours.
+            <p className="text-slate-400 max-w-md mx-auto text-sm font-light">
+              Thank you for reaching out. Our team will review your project requirements and connect with you on WhatsApp / Email within 24 hours.
             </p>
             <button
               onClick={() => setIsSuccess(false)}
-              className="font-mono text-xs text-cyan-400 hover:text-white uppercase tracking-widest pt-4 block mx-auto underline"
+              className="font-mono text-xs text-cyan-400 hover:text-white uppercase tracking-widest pt-3 block mx-auto underline"
             >
               SEND ANOTHER MESSAGE
             </button>
           </motion.div>
         ) : (
-          <form onSubmit={handleSubmit} className="space-y-8">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               {/* Name */}
-              <div className="space-y-2">
+              <div className="space-y-1.5">
                 <label className="block font-mono text-xs text-slate-300 uppercase tracking-wider">
                   YOUR NAME <span className="text-cyan-400">*</span>
                 </label>
@@ -105,10 +106,10 @@ export default function ContactForm() {
                   type="text"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  placeholder="e.g. Alex Mercer"
+                  placeholder="e.g. Rahul Sharma"
                   className={`w-full bg-white/5 border ${
                     errors.name ? 'border-red-500' : 'border-white/10 focus:border-cyan-400'
-                  } rounded-xl px-4 py-3.5 text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-cyan-400 transition-colors text-sm`}
+                  } rounded-xl px-3.5 py-3 text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-cyan-400 transition-colors text-sm`}
                 />
                 {errors.name && (
                   <p className="font-mono text-xs text-red-400 flex items-center gap-1">
@@ -118,7 +119,7 @@ export default function ContactForm() {
               </div>
 
               {/* Email */}
-              <div className="space-y-2">
+              <div className="space-y-1.5">
                 <label className="block font-mono text-xs text-slate-300 uppercase tracking-wider">
                   EMAIL ADDRESS <span className="text-cyan-400">*</span>
                 </label>
@@ -126,10 +127,10 @@ export default function ContactForm() {
                   type="email"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  placeholder="alex@company.com"
+                  placeholder="rahul@example.com"
                   className={`w-full bg-white/5 border ${
                     errors.email ? 'border-red-500' : 'border-white/10 focus:border-cyan-400'
-                  } rounded-xl px-4 py-3.5 text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-cyan-400 transition-colors text-sm`}
+                  } rounded-xl px-3.5 py-3 text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-cyan-400 transition-colors text-sm`}
                 />
                 {errors.email && (
                   <p className="font-mono text-xs text-red-400 flex items-center gap-1">
@@ -139,24 +140,24 @@ export default function ContactForm() {
               </div>
             </div>
 
-            {/* Company */}
-            <div className="space-y-2">
+            {/* Company / Brand */}
+            <div className="space-y-1.5">
               <label className="block font-mono text-xs text-slate-300 uppercase tracking-wider">
-                COMPANY / ORGANISATION
+                BRAND / COMPANY NAME
               </label>
               <input
                 type="text"
                 value={formData.company}
                 onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                placeholder="e.g. Aether Dynamics"
-                className="w-full bg-white/5 border border-white/10 focus:border-cyan-400 rounded-xl px-4 py-3.5 text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-cyan-400 transition-colors text-sm"
+                placeholder="e.g. My Brand / Studio"
+                className="w-full bg-white/5 border border-white/10 focus:border-cyan-400 rounded-xl px-3.5 py-3 text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-cyan-400 transition-colors text-sm"
               />
             </div>
 
             {/* Project Type Select */}
-            <div className="space-y-3">
+            <div className="space-y-2">
               <label className="block font-mono text-xs text-slate-300 uppercase tracking-wider">
-                PROJECT TYPE
+                REQUIRED SERVICE
               </label>
               <div className="flex flex-wrap gap-2">
                 {projectTypes.map((type) => (
@@ -164,7 +165,7 @@ export default function ContactForm() {
                     key={type}
                     type="button"
                     onClick={() => setFormData({ ...formData, projectType: type })}
-                    className={`font-mono text-xs px-4 py-2 rounded-full border transition-all ${
+                    className={`font-mono text-xs px-3.5 py-1.5 rounded-full border transition-all ${
                       formData.projectType === type
                         ? 'bg-cyan-400 text-black font-semibold border-cyan-400 shadow-[0_0_15px_rgba(0,240,255,0.4)]'
                         : 'bg-white/5 border-white/10 text-slate-300 hover:border-cyan-400/50'
@@ -176,10 +177,10 @@ export default function ContactForm() {
               </div>
             </div>
 
-            {/* Budget Range Select */}
-            <div className="space-y-3">
+            {/* Budget Range Select (INR / ₹) */}
+            <div className="space-y-2">
               <label className="block font-mono text-xs text-slate-300 uppercase tracking-wider">
-                ESTIMATED BUDGET (USD)
+                ESTIMATED BUDGET (INR / ₹)
               </label>
               <div className="flex flex-wrap gap-2">
                 {budgetRanges.map((range) => (
@@ -187,7 +188,7 @@ export default function ContactForm() {
                     key={range}
                     type="button"
                     onClick={() => setFormData({ ...formData, budget: range })}
-                    className={`font-mono text-xs px-4 py-2 rounded-full border transition-all ${
+                    className={`font-mono text-xs px-3.5 py-1.5 rounded-full border transition-all ${
                       formData.budget === range
                         ? 'bg-cyan-400 text-black font-semibold border-cyan-400 shadow-[0_0_15px_rgba(0,240,255,0.4)]'
                         : 'bg-white/5 border-white/10 text-slate-300 hover:border-cyan-400/50'
@@ -200,18 +201,18 @@ export default function ContactForm() {
             </div>
 
             {/* Message */}
-            <div className="space-y-2">
+            <div className="space-y-1.5">
               <label className="block font-mono text-xs text-slate-300 uppercase tracking-wider">
-                PROJECT BRIEF & VISION <span className="text-cyan-400">*</span>
+                PROJECT DETAILS & REQUIREMENTS <span className="text-cyan-400">*</span>
               </label>
               <textarea
-                rows={4}
+                rows={3}
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                placeholder="Tell us about your objectives, timeline, and key requirements..."
+                placeholder="Briefly describe what you are looking to build or design..."
                 className={`w-full bg-white/5 border ${
                   errors.message ? 'border-red-500' : 'border-white/10 focus:border-cyan-400'
-                } rounded-xl px-4 py-3.5 text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-cyan-400 transition-colors text-sm resize-none`}
+                } rounded-xl px-3.5 py-3 text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-cyan-400 transition-colors text-sm resize-none`}
               />
               {errors.message && (
                 <p className="font-mono text-xs text-red-400 flex items-center gap-1">
@@ -224,11 +225,11 @@ export default function ContactForm() {
             <Button
               type="submit"
               variant="primary"
-              size="lg"
+              size="md"
               disabled={isSubmitting}
-              className="w-full text-center justify-center py-4"
+              className="w-full text-center justify-center py-3.5"
             >
-              {isSubmitting ? 'TRANSMITTING BRIEF...' : 'INITIATE PROJECT CONVERSATION'}
+              {isSubmitting ? 'SENDING INQUIRY...' : 'SUBMIT PROJECT BRIEF'}
             </Button>
           </form>
         )}

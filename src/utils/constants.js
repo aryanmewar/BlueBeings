@@ -11,11 +11,10 @@ export const NAV_LINKS = [
 ];
 
 export const SOCIAL_LINKS = [
-  { name: 'Instagram', url: 'https://instagram.com' },
-  { name: 'Twitter / X', url: 'https://twitter.com' },
+  { name: 'Instagram', url: 'https://www.instagram.com/blue.beings?utm_source=qr&igsh=b21tY3BxcGhlbXQw' },
+  { name: 'Facebook', url: 'https://www.facebook.com/profile.php?id=61574696283495&ref=ig_profile_ac' },
   { name: 'LinkedIn', url: 'https://linkedin.com' },
-  { name: 'Behance', url: 'https://behance.net' },
-  { name: 'GitHub', url: 'https://github.com' },
+  { name: 'WhatsApp', url: 'https://wa.link/bt408i' },
 ];
 
 export const SCROLL_SECTIONS = [

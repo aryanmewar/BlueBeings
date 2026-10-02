@@ -35,7 +35,8 @@ export default function About() {
               Whether building an executive portfolio, shaping a brand identity from scratch, or designing high-conversion social visuals, our commitment is simple: <span className="text-slate-200 font-medium italic">"Blue Beings — Where Stories Come Alive."</span>
             </p>
 
-            {/* Studio Key Stats Grid */}
+            {/* Studio Key Stats Grid (Temporarily Commented Out) */}
+            {/*
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-white/10">
               {siteConfig.stats.map((stat, idx) => (
                 <div key={idx} className="space-y-1">
@@ -48,6 +49,7 @@ export default function About() {
                 </div>
               ))}
             </div>
+            */}
           </motion.div>
 
           {/* Editorial Asymmetric Card (Right Column - 5 Cols) */}

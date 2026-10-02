@@ -17,17 +17,17 @@ export default function SectionHeading({
   };
 
   return (
-    <div className={`flex flex-col mb-12 md:mb-20 max-w-4xl ${alignClasses[align]} ${className}`}>
+    <div className={`flex flex-col mb-10 md:mb-14 max-w-4xl ${alignClasses[align]} ${className}`}>
       {/* Top Tag & Index */}
       <motion.div
         variants={fadeIn('up', 0.1)}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, margin: '-50px' }}
-        className="flex items-center gap-3 mb-4"
+        className="flex items-center gap-3 mb-3"
       >
         {number && (
-          <span className="font-mono text-xs sm:text-sm tracking-widest text-cyan-400 bg-cyan-950/40 border border-cyan-800/50 px-2.5 py-1 rounded-full">
+          <span className="font-mono text-xs tracking-widest text-cyan-400 bg-cyan-950/40 border border-cyan-800/50 px-2.5 py-0.5 rounded-full">
             {number}
           </span>
         )}
@@ -44,7 +44,7 @@ export default function SectionHeading({
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, margin: '-50px' }}
-        className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight uppercase leading-[0.95] text-slate-100 mb-6"
+        className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight uppercase leading-[1.05] text-slate-100 mb-4"
       >
         {title}
       </motion.h2>
@@ -56,7 +56,7 @@ export default function SectionHeading({
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: '-50px' }}
-          className="text-slate-400 text-base sm:text-lg md:text-xl font-light leading-relaxed max-w-2xl"
+          className="text-slate-400 text-sm sm:text-base md:text-lg font-light leading-relaxed max-w-2xl"
         >
           {description}
         </motion.p>

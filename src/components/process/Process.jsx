@@ -6,60 +6,75 @@ import { fadeIn, staggerContainer } from '@/utils/animations';
 
 export default function Process() {
   return (
-    <section id="process" className="relative py-28 md:py-40 z-10 overflow-hidden bg-slate-950/40 border-y border-white/5 backdrop-blur-sm">
+    <section id="process" className="relative py-24 md:py-36 z-10 overflow-hidden bg-slate-950/40 border-y border-white/5 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <SectionHeading
           number="04"
           tag="METHODOLOGY"
           title="HOW WE CREATE"
-          description="A disciplined 5-stage production methodology engineered for artistic precision and technical excellence."
+          description="A tailored 5-stage workflow engineered to execute your brand identity, web design, graphic artwork, video editing, and social growth seamlessly."
         />
 
-        {/* Process Sequence Grid */}
+        {/* Process Cards Grid */}
         <motion.div
           variants={staggerContainer(0.15, 0.1)}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: '-50px' }}
-          className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
         >
-          {processSteps.map((step, idx) => (
-            <motion.div
-              key={step.number}
-              variants={fadeIn('up', idx * 0.1)}
-              className="group relative glass-panel rounded-3xl p-6 sm:p-8 border border-white/10 hover:border-cyan-400/50 transition-all duration-500 flex flex-col justify-between h-full hover:-translate-y-2 shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
-            >
-              {/* Top Step Index */}
-              <div className="flex items-center justify-between mb-8">
-                <span className="font-mono text-2xl font-black text-cyan-400 group-hover:scale-110 transition-transform">
-                  {step.number}
-                </span>
-                <span className="w-2 h-2 rounded-full bg-cyan-400 opacity-40 group-hover:opacity-100 group-hover:animate-ping" />
-              </div>
+          {processSteps.map((step, idx) => {
+            const isLast = idx === processSteps.length - 1;
 
-              {/* Title & Subtitle */}
-              <div className="space-y-2 mb-6">
-                <h3 className="font-heading text-xl sm:text-2xl font-extrabold uppercase tracking-tight text-slate-100 group-hover:text-cyan-300 transition-colors">
-                  {step.title}
-                </h3>
-                <p className="font-mono text-[11px] text-cyan-400 uppercase tracking-wider">
-                  {step.subtitle}
-                </p>
-              </div>
+            return (
+              <motion.div
+                key={step.number}
+                variants={fadeIn('up', idx * 0.1)}
+                className={`group relative glass-panel rounded-3xl p-7 sm:p-9 border border-white/10 hover:border-cyan-400/50 transition-all duration-500 flex flex-col justify-between hover:-translate-y-2 shadow-[0_15px_35px_rgba(0,0,0,0.5)] ${
+                  isLast ? 'md:col-span-2 lg:col-span-1' : ''
+                }`}
+              >
+                {/* Top Subtle Cyan Glow */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 rounded-full blur-2xl group-hover:bg-cyan-400/20 transition-all pointer-events-none" />
 
-              {/* Description */}
-              <p className="text-slate-400 text-xs sm:text-sm font-light leading-relaxed">
-                {step.description}
-              </p>
+                {/* Header: Step Number Badge */}
+                <div>
+                  <div className="flex items-center justify-between mb-6 border-b border-white/10 pb-4">
+                    <div className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+                      <span className="font-mono text-xs text-cyan-400 uppercase tracking-widest font-semibold">
+                        STAGE // {step.number}
+                      </span>
+                    </div>
+                    <span className="font-mono text-2xl font-black text-slate-500 group-hover:text-cyan-400 transition-colors">
+                      0{idx + 1}
+                    </span>
+                  </div>
 
-              {/* Connecting Connector Line for Desktop */}
-              {idx < processSteps.length - 1 && (
-                <div className="hidden lg:block absolute -right-4 top-1/2 -translate-y-1/2 z-20 text-cyan-500/40 font-mono text-xs">
-                  →
+                  {/* Title & Subtitle */}
+                  <div className="space-y-1.5 mb-4">
+                    <h3 className="font-heading text-xl sm:text-2xl font-bold uppercase tracking-tight text-slate-100 group-hover:text-cyan-300 transition-colors">
+                      {step.title}
+                    </h3>
+                    <p className="font-mono text-xs text-cyan-400 uppercase tracking-wider">
+                      {step.subtitle}
+                    </p>
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-slate-300 text-xs sm:text-sm font-light leading-relaxed">
+                    {step.description}
+                  </p>
                 </div>
-              )}
-            </motion.div>
-          ))}
+
+                {/* Bottom Step Indicator Bar */}
+                <div className="pt-6 mt-6 border-t border-white/5 flex items-center justify-between font-mono text-[10px] text-slate-500 group-hover:text-slate-400">
+                  <span>WORKFLOW PHASE</span>
+                  <span className="text-cyan-400/80">0{idx + 1} / 05</span>
+                </div>
+              </motion.div>
+            );
+          })}
         </motion.div>
       </div>
     </section>

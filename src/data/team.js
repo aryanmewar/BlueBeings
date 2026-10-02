@@ -1,83 +1,59 @@
 export const teamMembers = [
   {
-    id: "team-01",
-    name: "CYRUS VANCE",
+    id: "founder-01",
+    name: "ARYAN SHARMA",
     role: "Founder & Creative Director",
-    bio: "Pioneer in interactive WebGL art and digital storytelling with over 14 years shaping high-touch brand experiences globally.",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80",
-    specialty: "Art Direction & Spatial Design",
+    bio: "Founder and Creative Director behind Blue Beings. Architecting brand identity systems, digital design experiences, and creative technology strategies.",
+    image: "",
+    specialty: "Brand Strategy & Digital Direction",
     social: {
-      twitter: "https://twitter.com",
-      linkedin: "https://linkedin.com",
+      linkedin: "https://www.linkedin.com/in/aryan-sharma-8850a0292/",
+      instagram: "https://www.instagram.com/blue.beings",
     }
   },
   {
-    id: "team-02",
-    name: "ELENA ROSTOVA",
-    role: "Lead 3D & Shader Engineer",
-    bio: "Specialist in real-time GPU shaders, volumetric lighting, and mathematical particle systems that power our WebGL engine.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80",
-    specialty: "GLSL Shaders & Physics",
+    id: "founder-02",
+    name: "BALJINDER KAUR",
+    role: "Co-Founder & Head of Operations",
+    bio: "Co-Founder at Blue Beings. Driving strategic client operations, brand positioning, business growth, and creative project execution.",
+    image: "",
+    specialty: "Operations & Strategic Growth",
     social: {
-      github: "https://github.com",
-      twitter: "https://twitter.com",
+      linkedin: "https://www.linkedin.com/in/baljinder-kaur15/",
+      instagram: "https://www.instagram.com/blue.beings",
     }
-  },
-  {
-    id: "team-03",
-    name: "KAI CHEN",
-    role: "Head of Motion & Film",
-    bio: "Award-winning CGI artist and cinematographer blending cinematic pacing with interactive micro-animations.",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80",
-    specialty: "Kinetic Typo & CGI Animation",
-    social: {
-      behance: "https://behance.net",
-      instagram: "https://instagram.com",
-    }
-  },
-  {
-    id: "team-04",
-    name: "SORAIA AL-MANSUR",
-    role: "Principal Brand Architect",
-    bio: "Crafts enduring typographic identities and strategic brand posture for visionaries operating at the edge of tech.",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80",
-    specialty: "Brand Systems & Editorial Strategy",
-    social: {
-      linkedin: "https://linkedin.com",
-      twitter: "https://twitter.com",
-    }
-  },
+  }
 ];
 
 export const processSteps = [
   {
     number: "01",
-    title: "DISCOVER",
-    subtitle: "Uncovering Core Truths",
-    description: "We immerse ourselves into your brand DNA, technical constraints, and market opportunities to define a clear creative hypothesis.",
+    title: "BRAND DISCOVERY",
+    subtitle: "Strategy & Identity Mapping",
+    description: "We audit your brand vision, target audience, and market positioning to architect a distinct logo identity and strategic brand foundation.",
   },
   {
     number: "02",
-    title: "STRATEGIZE",
-    subtitle: "Mapping The Narrative Arc",
-    description: "Architecting the technical stack, interactive flow, and visual language system before touching a single line of code or 3D mesh.",
+    title: "DIGITAL DESIGN",
+    subtitle: "Custom Web & UI Architecture",
+    description: "Designing bespoke, responsive website layouts, intuitive UI/UX wireframes, and mobile-optimized digital flagships tailored to your business.",
   },
   {
     number: "03",
-    title: "DESIGN",
-    subtitle: "High-Craft Sculpting",
-    description: "Prototyping high-resolution 3D models, custom GLSL shaders, typography pairings, and micro-interactions in real-time.",
+    title: "GRAPHIC ARTWORK",
+    subtitle: "Print, Digital & AI Asset Crafting",
+    description: "Creating brochures, flyers, data infographics, corporate pitch decks, AI-driven visual art, custom doodles, and event stationery.",
   },
   {
     number: "04",
-    title: "BUILD",
-    subtitle: "Production-Grade Engineering",
-    description: "Developing lightweight, accessible React & Three.js codebases optimized for 60fps performance across mobile and desktop displays.",
+    title: "VIDEO EDITING",
+    subtitle: "Precision Post-Production & Motion",
+    description: "Transforming raw footage into high-converting promotional ad edits, faceless explainer videos, YouTube cuts, voice-overs, and motion FX.",
   },
   {
     number: "05",
-    title: "LAUNCH",
-    subtitle: "Orchestrated World Reveal",
-    description: "Deployment, global CDN optimization, SEO activation, and ongoing performance telemetry to ensure permanent visual excellence.",
+    title: "LAUNCH & GROWTH",
+    subtitle: "Channel Delivery & Asset Activation",
+    description: "Final asset delivery, high-CTR thumbnail creation, cover page artwork, and ongoing social media handle management for maximum reach.",
   },
 ];

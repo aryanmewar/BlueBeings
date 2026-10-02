@@ -5,17 +5,17 @@ import { teamMembers } from '@/data/team';
 
 export default function Team() {
   return (
-    <section id="team" className="relative py-28 md:py-40 z-10 overflow-hidden">
+    <section id="team" className="relative py-24 md:py-36 z-10 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <SectionHeading
           number="05"
-          tag="CREATIVE TEAM"
-          title="THE PEOPLE BEHIND THE STORIES"
-          description="A multidisciplinary collective of 3D artists, WebGL developers, motion designers, and brand architects."
+          tag="STUDIO LEADERSHIP"
+          title="THE FOUNDERS BEHIND THE STORIES"
+          description="Visionary creative direction, strategic brand architecture, and operational leadership driving Blue Beings."
         />
 
-        {/* Team Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Founders Grid (2 Columns) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {teamMembers.map((member, idx) => (
             <TeamCard key={member.id} member={member} index={idx} />
           ))}

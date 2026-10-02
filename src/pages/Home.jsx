@@ -2,7 +2,7 @@ import React from 'react';
 import Hero from '@/components/hero/Hero';
 import About from '@/components/about/About';
 import Services from '@/components/services/Services';
-import Projects from '@/components/projects/Projects';
+// import Projects from '@/components/projects/Projects';
 import Process from '@/components/process/Process';
 import Team from '@/components/team/Team';
 import Contact from '@/components/contact/Contact';
@@ -13,7 +13,8 @@ export default function Home() {
       <Hero />
       <About />
       <Services />
-      <Projects />
+      {/* Work / Selected Work section temporarily hidden */}
+      {/* <Projects /> */}
       <Process />
       <Team />
       <Contact />

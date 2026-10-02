@@ -2,7 +2,7 @@ export const SITE_NAME = 'Blue Beings';
 export const SITE_TAGLINE = 'Where Stories Come Alive';
 
 export const NAV_LINKS = [
-  { name: 'Work', href: '#work', id: 'work' },
+  // { name: 'Work', href: '#work', id: 'work' },
   { name: 'Services', href: '#services', id: 'services' },
   { name: 'About', href: '#about', id: 'about' },
   { name: 'Process', href: '#process', id: 'process' },
@@ -21,7 +21,7 @@ export const SCROLL_SECTIONS = [
   'hero',
   'about',
   'services',
-  'work',
+  // 'work',
   'process',
   'team',
   'contact'

@@ -9,7 +9,9 @@ export default function ServiceItem({ service, isHovered, onHover, onLeave }) {
     <div
       onMouseEnter={onHover}
       onMouseLeave={onLeave}
-      className="group relative border-b border-white/10 transition-colors duration-300 py-5 sm:py-6 lg:py-7 cursor-pointer"
+      className={`group relative border-b border-white/10 transition-colors duration-300 py-5 sm:py-6 cursor-pointer ${
+        isHovered ? 'bg-cyan-950/20' : ''
+      }`}
       data-cursor="pointer"
     >
       {/* Background Gradient Glow on Hover */}
@@ -28,17 +30,17 @@ export default function ServiceItem({ service, isHovered, onHover, onLeave }) {
             {service.number}
           </span>
           <div>
-            <h3 className="font-heading text-lg sm:text-2xl lg:text-3xl font-bold uppercase tracking-tight text-slate-100 group-hover:text-cyan-300 group-hover:translate-x-2 transition-transform duration-300">
+            <h3 className="font-heading text-lg sm:text-xl lg:text-2xl font-bold uppercase tracking-tight text-slate-100 group-hover:text-cyan-300 group-hover:translate-x-1.5 transition-transform duration-300">
               {service.title}
             </h3>
-            <p className="font-mono text-[11px] sm:text-xs text-slate-400 mt-1 uppercase tracking-wider">
+            <p className="font-mono text-[11px] sm:text-xs text-slate-400 mt-0.5 uppercase tracking-wider">
               {service.subtitle}
             </p>
           </div>
         </div>
 
-        {/* Right: Action Toggle & Tags */}
-        <div className="flex items-center gap-4">
+        {/* Right: Action Toggle */}
+        <div className="flex items-center gap-3">
           <div className="hidden lg:flex flex-wrap gap-2 max-w-xs justify-end">
             {service.tags.slice(0, 3).map((tag, idx) => (
               <span
@@ -50,7 +52,7 @@ export default function ServiceItem({ service, isHovered, onHover, onLeave }) {
             ))}
           </div>
 
-          <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 group-hover:border-cyan-400/50 group-hover:bg-cyan-950/40 flex items-center justify-center transition-all duration-300 shrink-0">
+          <div className="w-9 h-9 rounded-full bg-white/5 border border-white/10 group-hover:border-cyan-400/50 group-hover:bg-cyan-950/40 flex items-center justify-center transition-all duration-300 shrink-0">
             {isOpen ? (
               <Minus className="w-4 h-4 text-cyan-400" />
             ) : (
@@ -70,13 +72,13 @@ export default function ServiceItem({ service, isHovered, onHover, onLeave }) {
             transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
             className="relative z-10 overflow-hidden px-3 sm:px-5 pt-4"
           >
-            <div className="pt-4 border-t border-white/10 space-y-5">
-              <p className="text-slate-300 text-sm sm:text-base font-light leading-relaxed max-w-3xl">
+            <div className="pt-4 border-t border-white/10 space-y-4">
+              <p className="text-slate-300 text-xs sm:text-sm font-light leading-relaxed max-w-3xl">
                 {service.description}
               </p>
 
               {/* Offerings Bullet Grid */}
-              <div className="space-y-2.5 pt-1">
+              <div className="space-y-2 pt-1">
                 <div className="font-mono text-xs text-cyan-400 uppercase tracking-widest">
                   // INCLUDED OFFERINGS:
                 </div>

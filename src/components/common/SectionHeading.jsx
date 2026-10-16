@@ -27,12 +27,12 @@ export default function SectionHeading({
         className="flex items-center gap-3 mb-3"
       >
         {number && (
-          <span className="font-mono text-xs tracking-widest text-cyan-400 bg-cyan-950/40 border border-cyan-800/50 px-2.5 py-0.5 rounded-full">
+          <span className="font-mono text-xs tracking-widest text-orange-600 bg-orange-50 border border-orange-200 px-2.5 py-0.5 rounded-full">
             {number}
           </span>
         )}
         {tag && (
-          <span className="font-mono text-xs tracking-widest text-slate-400 uppercase">
+          <span className="font-mono text-xs tracking-widest text-[#9C8B7A] uppercase">
             // {tag}
           </span>
         )}
@@ -44,7 +44,7 @@ export default function SectionHeading({
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, margin: '-50px' }}
-        className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight uppercase leading-[1.05] text-slate-100 mb-4"
+        className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight uppercase leading-[1.05] text-[#1A1208] mb-4"
       >
         {title}
       </motion.h2>
@@ -56,7 +56,7 @@ export default function SectionHeading({
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: '-50px' }}
-          className="text-slate-400 text-sm sm:text-base md:text-lg font-light leading-relaxed max-w-2xl"
+          className="text-[#6B5B4A] text-sm sm:text-base md:text-lg font-light leading-relaxed max-w-2xl"
         >
           {description}
         </motion.p>

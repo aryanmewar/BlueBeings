@@ -13,24 +13,22 @@ export default function MobileMenu({ isOpen, onClose, activeSection }) {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: '-100%' }}
           transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-          className="fixed inset-0 z-50 bg-[#030712]/98 backdrop-blur-2xl flex flex-col justify-between p-6 sm:p-8 text-slate-100 border-b border-cyan-500/20 overflow-y-auto"
+          className="fixed inset-0 z-50 bg-[#FAF7F2]/98 backdrop-blur-2xl flex flex-col justify-between p-6 sm:p-8 text-[#1A1208] border-b border-orange-200 overflow-y-auto"
         >
-          {/* Top Header Bar inside Mobile Menu */}
-          <div className="flex items-center justify-between pb-6 border-b border-white/10 shrink-0">
-            {/* Logo */}
+          {/* Top Header */}
+          <div className="flex items-center justify-between pb-6 border-b border-[#1A1208]/10 shrink-0">
             <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-full bg-cyan-500/20 border border-cyan-400/50 flex items-center justify-center">
-                <Sparkles className="w-4 h-4 text-cyan-400" />
+              <div className="w-8 h-8 rounded-full bg-orange-100 border border-orange-300 flex items-center justify-center">
+                <Sparkles className="w-4 h-4 text-orange-500" />
               </div>
-              <span className="font-heading font-black text-lg tracking-tight text-white uppercase">
+              <span className="font-heading font-black text-lg tracking-tight text-[#1A1208] uppercase">
                 {SITE_NAME}
               </span>
             </div>
 
-            {/* Prominent Close Button */}
             <button
               onClick={onClose}
-              className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-400/40 text-cyan-400 hover:bg-cyan-400 hover:text-black transition-all duration-300 focus:outline-none"
+              className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-50 border border-orange-200 text-orange-600 hover:bg-orange-600 hover:text-white transition-all duration-300 focus:outline-none"
               aria-label="Close menu"
             >
               <span className="font-mono text-xs uppercase tracking-wider font-semibold">CLOSE</span>
@@ -38,28 +36,31 @@ export default function MobileMenu({ isOpen, onClose, activeSection }) {
             </button>
           </div>
 
-          {/* Main Navigation Links */}
+          {/* Nav Links */}
           <div className="flex flex-col space-y-4 my-auto py-6">
-            {NAV_LINKS.map((link, idx) => (
-              <motion.a
-                key={link.id}
-                href={link.href}
-                onClick={onClose}
-                initial={{ opacity: 0, x: -25 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.08 + idx * 0.06, duration: 0.35 }}
-                className="group flex items-baseline justify-between border-b border-slate-800/60 pb-2.5"
-              >
-                <span className="font-heading text-3xl sm:text-4xl font-extrabold uppercase tracking-tight text-slate-200 group-hover:text-cyan-400 transition-colors">
-                  {link.name}
-                </span>
-                <span className="font-mono text-xs text-cyan-400/80">0{idx + 1}</span>
-              </motion.a>
-            ))}
+            {NAV_LINKS.map((link, idx) => {
+              const isActive = activeSection === link.id;
+              return (
+                <motion.a
+                  key={link.id}
+                  href={link.href}
+                  onClick={onClose}
+                  initial={{ opacity: 0, x: -25 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.08 + idx * 0.06, duration: 0.35 }}
+                  className="group flex items-baseline justify-between border-b border-[#1A1208]/10 pb-2.5"
+                >
+                  <span className={`font-heading text-3xl sm:text-4xl font-extrabold uppercase tracking-tight transition-colors ${isActive ? 'text-orange-600' : 'text-[#1A1208] group-hover:text-orange-600'}`}>
+                    {link.name}
+                  </span>
+                  <span className={`font-mono text-xs ${isActive ? 'text-orange-600 font-bold' : 'text-orange-400'}`}>0{idx + 1}</span>
+                </motion.a>
+              );
+            })}
           </div>
 
-          {/* Bottom Actions & Socials */}
-          <div className="space-y-5 shrink-0 pt-4 border-t border-slate-800">
+          {/* Bottom CTA */}
+          <div className="space-y-5 shrink-0 pt-4 border-t border-[#1A1208]/10">
             <Button
               href="#contact"
               onClick={onClose}
@@ -70,14 +71,14 @@ export default function MobileMenu({ isOpen, onClose, activeSection }) {
               Start a Project
             </Button>
 
-            <div className="flex flex-wrap gap-4 justify-between font-mono text-[11px] text-slate-400 uppercase tracking-wider">
+            <div className="flex flex-wrap gap-4 justify-between font-mono text-[11px] text-[#6B5B4A] uppercase tracking-wider">
               {SOCIAL_LINKS.map((s) => (
                 <a
                   key={s.name}
                   href={s.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="hover:text-cyan-400 transition-colors"
+                  className="hover:text-orange-600 transition-colors"
                 >
                   {s.name}
                 </a>

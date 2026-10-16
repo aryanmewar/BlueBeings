@@ -14,13 +14,13 @@ export default function Button({
   disabled = false,
   ...props
 }) {
-  const baseStyles = 'inline-flex items-center justify-center font-medium tracking-wider uppercase transition-all duration-300 rounded-full group focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-black relative overflow-hidden select-none';
+  const baseStyles = 'inline-flex items-center justify-center font-medium tracking-wider uppercase transition-all duration-300 rounded-full group focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 focus:ring-offset-[#FAF7F2] relative overflow-hidden select-none';
 
   const variants = {
-    primary: 'bg-cyan-400 text-black font-semibold hover:bg-white hover:shadow-[0_0_30px_rgba(0,240,255,0.6)] border border-cyan-300',
-    secondary: 'bg-white/5 text-slate-100 border border-white/20 hover:border-cyan-400/60 hover:bg-cyan-950/30 hover:text-cyan-300 backdrop-blur-md',
-    outline: 'border border-cyan-500/40 text-cyan-400 hover:bg-cyan-500/10 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(0,240,255,0.3)]',
-    ghost: 'text-slate-300 hover:text-cyan-400 hover:bg-white/5',
+    primary: 'bg-[#E8521A] text-white font-semibold hover:bg-[#C43F0D] hover:shadow-[0_4px_20px_rgba(232,82,26,0.4)] border border-orange-600/30',
+    secondary: 'bg-white/80 text-[#1A1208] border border-[#1A1208]/15 hover:border-orange-400/60 hover:bg-orange-50 hover:text-orange-700 backdrop-blur-md',
+    outline: 'border border-orange-400/50 text-orange-600 hover:bg-orange-50 hover:border-orange-500 hover:shadow-[0_4px_16px_rgba(232,82,26,0.15)]',
+    ghost: 'text-[#6B5B4A] hover:text-orange-600 hover:bg-orange-50',
   };
 
   const sizes = {

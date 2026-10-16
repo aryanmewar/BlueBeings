@@ -12,7 +12,6 @@ export default function CustomCursor() {
   useEffect(() => {
     if (isMobile) return;
 
-    // Enable custom cursor class on body
     document.body.classList.add('custom-cursor-active');
 
     const handleMouseMove = (e) => {
@@ -35,11 +34,7 @@ export default function CustomCursor() {
           setCursorState('pointer');
         }
 
-        if (customText) {
-          setCursorText(customText);
-        } else {
-          setCursorText('');
-        }
+        setCursorText(customText || '');
       } else {
         setCursorState('default');
         setCursorText('');
@@ -68,17 +63,17 @@ export default function CustomCursor() {
       y: mousePos.y - 8,
       width: 16,
       height: 16,
-      backgroundColor: '#00f0ff',
-      boxShadow: '0 0 15px rgba(0, 240, 255, 0.8)',
-      mixBlendMode: 'difference',
+      backgroundColor: '#E8521A',
+      boxShadow: '0 0 12px rgba(232, 82, 26, 0.7)',
+      mixBlendMode: 'multiply',
     },
     pointer: {
       x: mousePos.x - 24,
       y: mousePos.y - 24,
       width: 48,
       height: 48,
-      backgroundColor: 'rgba(0, 240, 255, 0.15)',
-      borderColor: '#00f0ff',
+      backgroundColor: 'rgba(232, 82, 26, 0.12)',
+      borderColor: '#E8521A',
       borderWidth: 1.5,
     },
     project: {
@@ -86,25 +81,25 @@ export default function CustomCursor() {
       y: mousePos.y - 40,
       width: 80,
       height: 80,
-      backgroundColor: 'rgba(0, 240, 255, 0.9)',
-      color: '#000000',
+      backgroundColor: 'rgba(232, 82, 26, 0.9)',
+      color: '#ffffff',
     },
     drag: {
       x: mousePos.x - 30,
       y: mousePos.y - 30,
       width: 60,
       height: 60,
-      backgroundColor: 'rgba(255, 255, 255, 0.2)',
-      borderColor: '#ffffff',
+      backgroundColor: 'rgba(26, 18, 8, 0.12)',
+      borderColor: '#1A1208',
       borderWidth: 1,
-    }
+    },
   };
 
   return (
     <>
-      {/* Main Cursor Circle */}
+      {/* Main Cursor */}
       <motion.div
-        className="fixed top-0 left-0 rounded-full pointer-events-none z-[9999] flex items-center justify-center font-mono text-[10px] font-bold tracking-widest uppercase text-black"
+        className="fixed top-0 left-0 rounded-full pointer-events-none z-[9999] flex items-center justify-center font-mono text-[10px] font-bold tracking-widest uppercase text-white"
         animate={cursorState in variants ? cursorState : 'default'}
         variants={variants}
         transition={{
@@ -119,7 +114,7 @@ export default function CustomCursor() {
 
       {/* Trailing Dot */}
       <motion.div
-        className="fixed top-0 left-0 w-2 h-2 bg-cyan-400/50 rounded-full pointer-events-none z-[9998]"
+        className="fixed top-0 left-0 w-2 h-2 bg-orange-400/60 rounded-full pointer-events-none z-[9998]"
         animate={{
           x: mousePos.x - 4,
           y: mousePos.y - 4,

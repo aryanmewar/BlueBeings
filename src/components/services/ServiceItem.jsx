@@ -9,14 +9,14 @@ export default function ServiceItem({ service, isHovered, onHover, onLeave }) {
     <div
       onMouseEnter={onHover}
       onMouseLeave={onLeave}
-      className={`group relative border-b border-white/10 transition-colors duration-300 py-5 sm:py-6 cursor-pointer ${
-        isHovered ? 'bg-cyan-950/20' : ''
+      className={`group relative border-b border-[#1A1208]/10 transition-colors duration-300 py-5 sm:py-6 cursor-pointer ${
+        isHovered ? 'bg-orange-50/60' : ''
       }`}
       data-cursor="pointer"
     >
-      {/* Background Gradient Glow on Hover */}
+      {/* Hover background highlight */}
       <div
-        className={`absolute inset-0 bg-gradient-to-r ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-xl`}
+        className={`absolute inset-0 bg-gradient-to-r from-orange-50 to-amber-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-xl`}
       />
 
       {/* Main Row */}
@@ -26,43 +26,43 @@ export default function ServiceItem({ service, isHovered, onHover, onLeave }) {
       >
         {/* Left: Number & Title */}
         <div className="flex items-baseline gap-4 sm:gap-6">
-          <span className="font-mono text-xs sm:text-sm font-semibold text-cyan-400/80 group-hover:text-cyan-400 transition-all duration-300">
+          <span className="font-mono text-xs sm:text-sm font-semibold text-orange-400 group-hover:text-orange-600 transition-all duration-300">
             {service.number}
           </span>
           <div>
-            <h3 className="font-heading text-lg sm:text-xl lg:text-2xl font-bold uppercase tracking-tight text-slate-100 group-hover:text-cyan-300 group-hover:translate-x-1.5 transition-transform duration-300">
+            <h3 className="font-heading text-lg sm:text-xl lg:text-2xl font-bold uppercase tracking-tight text-[#1A1208] group-hover:text-orange-700 group-hover:translate-x-1.5 transition-all duration-300">
               {service.title}
             </h3>
-            <p className="font-mono text-[11px] sm:text-xs text-slate-400 mt-0.5 uppercase tracking-wider">
+            <p className="font-mono text-[11px] sm:text-xs text-[#9C8B7A] mt-0.5 uppercase tracking-wider">
               {service.subtitle}
             </p>
           </div>
         </div>
 
-        {/* Right: Action Toggle */}
+        {/* Right: Tags + Toggle */}
         <div className="flex items-center gap-3">
           <div className="hidden lg:flex flex-wrap gap-2 max-w-xs justify-end">
             {service.tags.slice(0, 3).map((tag, idx) => (
               <span
                 key={idx}
-                className="font-mono text-[10px] text-slate-400 bg-white/5 border border-white/10 px-2.5 py-1 rounded-full uppercase"
+                className="font-mono text-[10px] text-[#6B5B4A] bg-[#1A1208]/5 border border-[#1A1208]/10 px-2.5 py-1 rounded-full uppercase"
               >
                 {tag}
               </span>
             ))}
           </div>
 
-          <div className="w-9 h-9 rounded-full bg-white/5 border border-white/10 group-hover:border-cyan-400/50 group-hover:bg-cyan-950/40 flex items-center justify-center transition-all duration-300 shrink-0">
+          <div className="w-9 h-9 rounded-full bg-orange-50 border border-orange-200 group-hover:border-orange-400 group-hover:bg-orange-100 flex items-center justify-center transition-all duration-300 shrink-0">
             {isOpen ? (
-              <Minus className="w-4 h-4 text-cyan-400" />
+              <Minus className="w-4 h-4 text-orange-600" />
             ) : (
-              <Plus className="w-4 h-4 text-slate-400 group-hover:text-cyan-400 transition-colors" />
+              <Plus className="w-4 h-4 text-[#9C8B7A] group-hover:text-orange-600 transition-colors" />
             )}
           </div>
         </div>
       </div>
 
-      {/* Accordion / Expanded Offerings Details */}
+      {/* Accordion Expanded Details */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -72,24 +72,24 @@ export default function ServiceItem({ service, isHovered, onHover, onLeave }) {
             transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
             className="relative z-10 overflow-hidden px-3 sm:px-5 pt-4"
           >
-            <div className="pt-4 border-t border-white/10 space-y-4">
-              <p className="text-slate-300 text-xs sm:text-sm font-light leading-relaxed max-w-3xl">
+            <div className="pt-4 border-t border-[#1A1208]/10 space-y-4">
+              <p className="text-[#6B5B4A] text-xs sm:text-sm font-light leading-relaxed max-w-3xl">
                 {service.description}
               </p>
 
-              {/* Offerings Bullet Grid */}
+              {/* Offerings Grid */}
               <div className="space-y-2 pt-1">
-                <div className="font-mono text-xs text-cyan-400 uppercase tracking-widest">
+                <div className="font-mono text-xs text-orange-600 uppercase tracking-widest">
                   // INCLUDED OFFERINGS:
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
                   {service.offerings.map((offering, idx) => (
                     <div
                       key={idx}
-                      className="flex items-start gap-2 p-2.5 rounded-lg bg-white/5 border border-white/5 hover:border-cyan-400/30 transition-colors"
+                      className="flex items-start gap-2 p-2.5 rounded-lg bg-orange-50/60 border border-orange-100 hover:border-orange-300 transition-colors"
                     >
-                      <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
-                      <span className="text-slate-200 text-xs font-medium">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-orange-500 shrink-0 mt-0.5" />
+                      <span className="text-[#1A1208] text-xs font-medium">
                         {offering}
                       </span>
                     </div>
@@ -100,7 +100,7 @@ export default function ServiceItem({ service, isHovered, onHover, onLeave }) {
               <div className="flex items-center justify-between pt-3">
                 <a
                   href="#contact"
-                  className="font-mono text-xs text-cyan-400 hover:text-white uppercase tracking-widest flex items-center gap-2 group/link"
+                  className="font-mono text-xs text-orange-600 hover:text-[#1A1208] uppercase tracking-widest flex items-center gap-2 group/link"
                 >
                   <span>GET STARTED WITH THIS SERVICE</span>
                   <ArrowUpRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" />

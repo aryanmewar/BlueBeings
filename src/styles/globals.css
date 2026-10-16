@@ -15,23 +15,23 @@
     letter-spacing: -0.02em;
   }
 
-  /* Custom scrollbar */
+  /* Custom scrollbar — warm theme */
   ::-webkit-scrollbar {
     width: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: #030712;
+    background: #F0EAE0;
   }
   ::-webkit-scrollbar-thumb {
-    background: #1e293b;
+    background: #C8B8A4;
     border-radius: 9999px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #00f0ff;
+    background: #E8521A;
   }
 }
 
-/* Custom Cursor support */
+/* Custom Cursor */
 @media (hover: hover) and (pointer: fine) {
   body.custom-cursor-active {
     cursor: none;
@@ -43,12 +43,12 @@
   }
 }
 
-/* Utility Glass class */
+/* ── Glass Panel — Warm Light Version ── */
 .glass-panel {
-  background: rgba(6, 12, 26, 0.7);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(26, 18, 8, 0.08);
 }
 
 .glass-panel-hover {
@@ -56,31 +56,38 @@
 }
 
 .glass-panel-hover:hover {
-  background: rgba(12, 24, 48, 0.85);
-  border-color: rgba(0, 240, 255, 0.4);
-  box-shadow: 0 0 30px rgba(0, 240, 255, 0.15);
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(232, 82, 26, 0.3);
+  box-shadow: 0 8px 40px rgba(232, 82, 26, 0.10), 0 2px 12px rgba(0,0,0,0.06);
 }
 
-/* Custom Text Gradient */
-.text-gradient-cyan {
-  background: linear-gradient(135deg, #ffffff 0%, #00f0ff 60%, #3b82f6 100%);
+/* ── Text Gradients — Warm Palette ── */
+.text-gradient-primary {
+  background: linear-gradient(135deg, #E8521A 0%, #F97316 60%, #FBBF24 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-gradient-silver {
-  background: linear-gradient(180deg, #ffffff 0%, #94a3b8 100%);
+  background: linear-gradient(180deg, #1A1208 0%, #7C6B5A 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.text-gradient-subtle {
-  background: linear-gradient(90deg, #94a3b8 0%, #e2e8f0 50%, #94a3b8 100%);
+.text-gradient-warm {
+  background: linear-gradient(90deg, #7C6B5A 0%, #3D2F20 50%, #7C6B5A 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Hide scrollbar for clean horizontal containers */
+/* ── Legacy alias — replaces old cyan gradient usages ── */
+.text-gradient-cyan {
+  background: linear-gradient(135deg, #E8521A 0%, #F97316 60%, #FBBF24 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Hide scrollbar */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }

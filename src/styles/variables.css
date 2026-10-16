@@ -1,41 +1,43 @@
 :root {
-  /* Color Palette - Blue Beings Void Theme */
-  --color-background: #030712;
-  --color-background-elevated: #080e1e;
-  --color-background-glass: rgba(6, 12, 26, 0.75);
-  
-  --color-foreground: #f8fafc;
-  --color-foreground-muted: #94a3b8;
-  --color-foreground-dim: #64748b;
-  
-  --color-primary: #00f0ff;
-  --color-primary-hover: #38bdf8;
-  --color-primary-glow: rgba(0, 240, 255, 0.25);
-  
-  --color-secondary: #6366f1;
-  --color-accent: #3b82f6;
-  --color-accent-deep: #1e1b4b;
-  
-  --color-border: rgba(255, 255, 255, 0.1);
-  --color-border-accent: rgba(0, 240, 255, 0.3);
+  /* ── LIGHT EDITORIAL THEME ── Warm Ivory × Terracotta */
+  --color-background:          #FAF7F2;
+  --color-background-elevated: #F5F0E8;
+  --color-background-glass:    rgba(250, 247, 242, 0.85);
+
+  --color-foreground:          #1A1208;
+  --color-foreground-muted:    #6B5B4A;
+  --color-foreground-dim:      #9C8B7A;
+
+  /* Terracotta accent — bold, creative, warm */
+  --color-primary:             #E8521A;
+  --color-primary-hover:       #C43F0D;
+  --color-primary-glow:        rgba(232, 82, 26, 0.18);
+
+  /* Green secondary — earthy contrast */
+  --color-secondary:           #2D7A3A;
+  --color-accent:              #E8521A;
+  --color-accent-deep:         #FDE9DE;
+
+  --color-border:              rgba(26, 18, 8, 0.10);
+  --color-border-accent:       rgba(232, 82, 26, 0.35);
 
   /* Typography */
   --font-heading: 'Syne', sans-serif;
-  --font-body: 'Plus Jakarta Sans', sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-body:    'Plus Jakarta Sans', sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
 
   /* Easing & Transitions */
-  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-in-out-cubic: cubic-bezier(0.65, 0, 0.35, 1);
-  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-medium: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-slow: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-expo:       cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-cubic:   cubic-bezier(0.65, 0, 0.35, 1);
+  --transition-fast:     0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-medium:   0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow:     0.8s cubic-bezier(0.16, 1, 0.3, 1);
 
   /* Z-indices */
-  --z-canvas: 0;
-  --z-content: 10;
-  --z-navbar: 40;
-  --z-cursor: 50;
-  --z-modal: 60;
-  --z-loader: 100;
+  --z-canvas:   0;
+  --z-content:  10;
+  --z-navbar:   40;
+  --z-cursor:   50;
+  --z-modal:    60;
+  --z-loader:   100;
 }
